@@ -1,0 +1,159 @@
+<!DOCTYPE html> <!-- Specifies HTML5 document type -->
+<html lang="en"> <!-- Sets the language of the document to English -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Defines character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices -->
+    <title>Currency Converter - Convert your currency</title> <!-- Sets the page title in the browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Links to an external CSS file for additional styling -->
+
+    <!-- Inline CSS for quick styling -->
+    <style>
+        * { 
+            margin: 0; /* Removes default margin for all elements */
+            padding: 0; /* Removes default padding for all elements */
+        }
+
+        nav { 
+            font-weight: 980; /* Sets font weight */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Sets font family */
+            display: flex; /* Displays navigation items in a row */
+            font-size: 30px; /* Sets font size for navigation */
+            background-color: #f851f8; /* Background color for navigation bar */
+        }
+
+        nav li a {
+            text-decoration: none; /* Removes underline from links */
+            color: rgb(2, 3, 18); /* Sets default link color */
+            transition: all; /* Enables transition effect */
+            transition-duration: 500ms; /* Sets transition duration to 500ms */
+        }
+
+        nav li a:hover {
+            text-decoration: none; /* Removes underline on hover */
+            color: rgb(71, 24, 146); /* Changes color on hover */
+        }
+
+        div.logo {
+            display: flex; /* Sets layout of logo as flexbox */
+            justify-content: center; /* Centers logo horizontally */
+            align-items: center; /* Centers logo vertically */
+            margin: 0 23px; /* Adds horizontal spacing around logo */
+        }
+
+        nav ul li {
+            list-style: none; /* Removes bullet points from list items */
+            margin: 0 23px; /* Adds horizontal spacing between nav items */
+        }
+
+        nav ul {
+            display: flex; /* Displays list items in a row */
+        }
+
+        .container {
+            min-height: 100vh; /* Sets minimum height to viewport height */
+            max-width: 80vw; /* Limits container width to 80% of viewport */
+            margin: auto; /* Centers the container horizontally */
+        }
+
+        .container h1,
+        h2 {
+            margin: 23px 0; /* Adds vertical margin to headings */
+        }
+
+        .container form {
+            display: flex; /* Sets form layout as flexbox */
+            flex-direction: column; /* Stacks form elements vertically */
+        }
+
+        .container form label {
+            font-size: 25px; /* Sets label font size */
+        }
+
+        .container form input[type='number'],
+        select,
+        label {
+            font-size: 25px; /* Sets font size for input, select, and label */
+            width: 23vw; /* Limits width to 23% of viewport */
+            margin-bottom: 23px; /* Adds bottom margin for spacing */
+        }
+
+        .btn {
+            width: 144px; /* Sets button width */
+            padding: 11px 15px; /* Adds padding for button */
+            font-size: 20px; /* Sets button font size */
+            background: #f851f8; /* Sets button background color */
+            color: white; /* Sets button text color */
+            border-radius: 13px; /* Rounds button corners */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+        }
+
+        .output {
+            display: none; /* Initially hides the output section */
+        }
+
+        .output table {
+            width: 23vw; /* Sets width for output table */
+            text-align: center; /* Centers text in table */
+            border: 2px solid black; /* Adds border around table */
+            font-size: 20px; /* Sets font size in table */
+        }
+
+        footer {
+            text-align: center; /* Centers footer text */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <div class="logo">MyCurrencyConverter</div> <!-- Logo for the website -->
+        <ul> <!-- List of navigation links -->
+            <li><a href="/Home">Home</a></li> <!-- Link to Home page -->
+            <li><a href="/About Us">About Us</a></li> <!-- Link to About Us page -->
+            <li><a href="/Contact">Contact</a></li> <!-- Link to Contact page -->
+        </ul>
+    </nav>
+
+    <!-- Main content container -->
+    <div class="container">
+        <h1>Choose a currency to convert</h1> <!-- Page header -->
+        <form id="currencyForm"> <!-- Form to input conversion data -->
+            <label for="quantity">Choose a quantity:</label> <!-- Label for quantity input -->
+            <input type="number" name="quantity" min="1" max="10000"> <!-- Quantity input field -->
+            <label for="currency">Choose a currency:</label> <!-- Label for currency selection -->
+            <select name="currency"> <!-- Dropdown for currency options -->
+                <option value="INR">Indian Rupee</option> <!-- INR option -->
+                <option value="USD">Dollar</option> <!-- USD option -->
+                <option value="EUR">Euro</option> <!-- EUR option -->
+            </select>
+            <button class="btn" type="button">Convert</button> <!-- Convert button -->
+        </form>
+
+        <!-- Output section for conversion results -->
+        <div class="output">
+            <h2>Here is your converted values in different currencies</h2> <!-- Output header -->
+            <table>
+                <thead> <!-- Table header -->
+                    <tr>
+                        <th>Currency</th> <!-- Currency column header -->
+                        <th>Currency Code</th> <!-- Code column header -->
+                        <th>Value</th> <!-- Value column header -->
+                    </tr>
+                </thead>
+                <tbody></tbody> <!-- Table body for conversion data -->
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer with copyright notice -->
+    <footer>
+        Copyright &copy; All rights reserved.
+    </footer>
+
+    <!-- Links to external JavaScript file for interactivity -->
+    <script src="main.js"></script>
+</body>
+
+</html>
